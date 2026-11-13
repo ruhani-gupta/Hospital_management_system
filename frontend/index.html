@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediCare+ | Hospital Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ================= LOGIN ================= -->
+  <section id="loginView" class="login hidden">
+    <div class="login-hero">
+      <div class="hero-cross">✚</div>
+      <h1>MediCare<span>+</span></h1>
+      <p class="hero-sub">Smart Hospital Management System</p>
+      <ul class="hero-list">
+        <li>🧑‍⚕️ Doctors &amp; Departments</li>
+        <li>🗂️ Patient Records &amp; Prescriptions</li>
+        <li>📅 Appointment Scheduling</li>
+        <li>💳 Billing &amp; Invoices</li>
+        <li>💊 Pharmacy &amp; Lab Management</li>
+        <li>🛏️ Bed &amp; Ward Tracking</li>
+      </ul>
+      <div class="pulse-line">
+        <svg viewBox="0 0 400 60" preserveAspectRatio="none"><polyline points="0,30 70,30 90,30 105,8 125,52 140,30 200,30 220,30 235,12 255,48 270,30 400,30" /></svg>
+      </div>
+    </div>
+
+    <div class="login-card-wrap">
+      <form id="loginForm" class="login-card">
+        <div class="login-logo">✚</div>
+        <h2>Welcome back</h2>
+        <p class="muted">Sign in to continue to your dashboard</p>
+
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="you@hospital.com" required autocomplete="username" />
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password" />
+        <div id="loginError" class="form-error hidden"></div>
+        <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+
+        <div class="demo-box">
+          <p><b>Demo accounts</b> (click to fill)</p>
+          <button type="button" class="chip" data-email="admin@hospital.com" data-pass="admin123">👑 Admin</button>
+          <button type="button" class="chip" data-email="doctor@hospital.com" data-pass="doctor123">🩺 Doctor</button>
+          <button type="button" class="chip" data-email="reception@hospital.com" data-pass="reception123">🛎️ Reception</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= APP ================= -->
+  <div id="appView" class="app hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand"><span class="brand-cross">✚</span> MediCare<span>+</span></div>
+      <nav id="nav"></nav>
+      <div class="sidebar-foot">
+        <div class="emergency">🚑 Emergency<br /><b>108 / 0161-2400000</b></div>
+      </div>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menu">☰</button>
+        <div class="topbar-title">
+          <h2 id="pageTitle">Dashboard</h2>
+          <span id="todayLabel" class="muted"></span>
+        </div>
+        <div class="topbar-right">
+          <button id="themeBtn" class="icon-btn" title="Toggle dark mode">🌙</button>
+          <div class="user-menu">
+            <button id="userBtn" class="user-btn">
+              <span id="userAvatar" class="avatar">A</span>
+              <span class="user-info"><b id="userName">User</b><small id="userRole">role</small></span>
+            </button>
+            <div id="userDropdown" class="dropdown hidden">
+              <button id="changePwBtn">🔑 Change password</button>
+              <button id="logoutBtn">🚪 Logout</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main id="content" class="content"></main>
+    </div>
+  </div>
+
+  <!-- Modal + toast -->
+  <div id="modalBackdrop" class="modal-backdrop hidden">
+    <div id="modal" class="modal"></div>
+  </div>
+  <div id="toasts" class="toasts"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+node_modules/
+backend/hospital.db
+backend/hospital.db-shm
+backend/hospital.db-wal
